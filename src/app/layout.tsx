@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { GeistSans } from "geist/font/sans";
 import { Instrument_Serif, DM_Sans } from "next/font/google";
 import "./globals.css";
+
+// Travelpayouts "Drive" tag (marker 540997) — injected verbatim as a literal
+// inline script so their crawler detects it in the static HTML. (next/script
+// rewrites it into a preload + loader queue that the crawler can't recognize.)
+const TRAVELPAYOUTS_DRIVE = `(function () {
+  var script = document.createElement("script");
+  script.async = 1;
+  script.src = 'https://emrldtp.com/NTQwOTk3.js?t=540997';
+  document.head.appendChild(script);
+})();`;
 
 // Style A display accent — Instrument Serif italic
 const instrumentSerif = Instrument_Serif({
@@ -42,13 +51,10 @@ export default function RootLayout({
       lang="en"
       className={`${GeistSans.variable} ${instrumentSerif.variable} ${dmSans.variable}`}
     >
-      {/* Travelpayouts "Drive" verification + tools tag (marker 540997) */}
-      <Script
-        id="travelpayouts-drive"
-        src="https://emrldtp.com/NTQwOTk3.js?t=540997"
-        strategy="beforeInteractive"
-        async
-      />
+      <head>
+        {/* Travelpayouts "Drive" tag (marker 540997) */}
+        <script dangerouslySetInnerHTML={{ __html: TRAVELPAYOUTS_DRIVE }} />
+      </head>
       <body>{children}</body>
     </html>
   );
