@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { Instrument_Serif, DM_Sans } from "next/font/google";
+import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
 
 // Travelpayouts "Drive" tag (marker 540997) — injected verbatim as a literal
@@ -12,13 +13,6 @@ const TRAVELPAYOUTS_DRIVE = `(function () {
   script.src = 'https://emrldtp.com/NTQwOTk3.js?t=540997';
   document.head.appendChild(script);
 })();`;
-
-// Google Analytics 4
-const GA_MEASUREMENT_ID = "G-ZE6F3L3X6P";
-const GA_INIT = `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${GA_MEASUREMENT_ID}');`;
 
 // Style A display accent — Instrument Serif italic
 const instrumentSerif = Instrument_Serif({
@@ -59,16 +53,14 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${instrumentSerif.variable} ${dmSans.variable}`}
     >
       <head>
-        {/* Google Analytics 4 */}
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        />
-        <script dangerouslySetInnerHTML={{ __html: GA_INIT }} />
         {/* Travelpayouts "Drive" tag (marker 540997) */}
         <script dangerouslySetInnerHTML={{ __html: TRAVELPAYOUTS_DRIVE }} />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* GA4 loads only after the visitor accepts cookies */}
+        <CookieConsent />
+      </body>
     </html>
   );
 }

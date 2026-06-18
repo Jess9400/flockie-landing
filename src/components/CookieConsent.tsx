@@ -1,0 +1,95 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+const GA_ID = "G-ZE6F3L3X6P";
+const STORAGE_KEY = "flockie-cookie-consent";
+
+// Inject + initialise Google Analytics. Only ever called after consent.
+function loadGoogleAnalytics() {
+  const w = window as unknown as {
+    __gaLoaded?: boolean;
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  };
+  if (w.__gaLoaded) return;
+  w.__gaLoaded = true;
+
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(s);
+
+  w.dataLayer = w.dataLayer || [];
+  function gtag(...args: unknown[]) {
+    w.dataLayer!.push(args);
+  }
+  w.gtag = gtag;
+  gtag("js", new Date());
+  gtag("config", GA_ID);
+}
+
+export default function CookieConsent() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    let choice: string | null = null;
+    try {
+      choice = localStorage.getItem(STORAGE_KEY);
+    } catch {
+      // localStorage unavailable (private mode / blocked) — show the banner.
+    }
+    if (choice === "granted") {
+      loadGoogleAnalytics();
+    } else if (choice !== "denied") {
+      setShow(true);
+    }
+  }, []);
+
+  function accept() {
+    try {
+      localStorage.setItem(STORAGE_KEY, "granted");
+    } catch {}
+    loadGoogleAnalytics();
+    setShow(false);
+  }
+
+  function decline() {
+    try {
+      localStorage.setItem(STORAGE_KEY, "denied");
+    } catch {}
+    setShow(false);
+  }
+
+  if (!show) return null;
+
+  return (
+    <div
+      role="dialog"
+      aria-live="polite"
+      aria-label="Cookie consent"
+      className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-lg rounded-3xl border-2 border-ink bg-white p-5 shadow-[0_8px_0_0_rgba(26,26,26,1)] sm:inset-x-0 sm:bottom-5"
+    >
+      <p className="font-dm text-sm font-medium text-ink/80">
+        We use cookies to understand how visitors use Flockie — analytics only.
+        Your call.
+      </p>
+      <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:justify-end">
+        <button
+          type="button"
+          onClick={decline}
+          className="order-2 rounded-full border-2 border-ink bg-white px-5 py-2 font-dm font-bold text-ink transition-transform hover:scale-105 sm:order-1"
+        >
+          Decline
+        </button>
+        <button
+          type="button"
+          onClick={accept}
+          className="order-1 rounded-full border-2 border-ink bg-flockie-orange px-5 py-2 font-dm font-bold text-white shadow-[0_4px_0_0_#E0512C] transition-transform hover:scale-105 active:translate-y-1 sm:order-2"
+        >
+          Accept
+        </button>
+      </div>
+    </div>
+  );
+}
