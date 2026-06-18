@@ -73,7 +73,7 @@ export default function Nav({ variant }: NavProps) {
           <a href="#waitlist" className={`${secondary} sm:hidden`}>
             Waitlist
           </a>
-          <a href="#" className={primary}>
+          <a href="https://app.findflockie.com/login" className={primary}>
             Launch App
           </a>
 
