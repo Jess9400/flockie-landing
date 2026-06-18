@@ -50,7 +50,7 @@ export default function Nav({ variant }: NavProps) {
             width={140}
             height={47}
             priority
-            className="h-7 w-auto sm:h-9"
+            className="h-[42px] w-auto sm:h-[54px]"
           />
         </Link>
 
