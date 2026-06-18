@@ -71,7 +71,7 @@ export default function CookieConsent() {
       className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-lg rounded-3xl border-2 border-ink bg-white p-5 shadow-[0_8px_0_0_rgba(26,26,26,1)] sm:inset-x-0 sm:bottom-5"
     >
       <p className="font-dm text-sm font-medium text-ink/80">
-        We use cookies to understand how visitors use Flockie — analytics only.
+        We use cookies to understand how visitors use Flockie, analytics only.
         Your call.{" "}
         <a
           href="/privacy"

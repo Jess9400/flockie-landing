@@ -32,9 +32,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Flockie — Find your flock",
+  title: "Flockie | Find your flock",
   description:
-    "The travel buddy matching platform for solo travelers and digital nomads. Built on a vibe check filled out by you and your closest friend.",
+    "Find compatible, vibe-checked people to do anything with you, from a trip across the world to dinner across town. Matched on a vibe check completed by you and a friend.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },

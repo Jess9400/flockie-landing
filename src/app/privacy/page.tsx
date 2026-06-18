@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { FOOTER } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Flockie",
+  title: "Privacy Policy | Flockie",
   description: "How Flockie collects, uses, and protects your information.",
 };
 
@@ -93,15 +93,15 @@ export default function PrivacyPage() {
             </p>
             <ul className="mt-3 space-y-2">
               <li>
-                <strong className="font-bold text-ink">Vercel</strong> — website
+                <strong className="font-bold text-ink">Vercel</strong>: website
                 hosting.
               </li>
               <li>
-                <strong className="font-bold text-ink">Google</strong> —
+                <strong className="font-bold text-ink">Google</strong>:
                 Analytics and email (Google Workspace).
               </li>
               <li>
-                <strong className="font-bold text-ink">Travelpayouts</strong> —
+                <strong className="font-bold text-ink">Travelpayouts</strong>:
                 travel deals and affiliate links.
               </li>
             </ul>

@@ -12,12 +12,12 @@ import {
   STEPS,
   VIBE,
   WAITLIST,
-  BOUNTY,
+  VIBE_BUDDY,
   AVATARS,
 } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Flockie — Find your flock",
+  title: "Flockie | Find your flock",
   description: HERO.subhead,
 };
 
@@ -75,7 +75,7 @@ export default function HomePage() {
                 <h1 className="mt-6 font-black leading-[0.95] tracking-[-0.02em] [font-size:clamp(2.5rem,7vw,6rem)]">
                   Find your <span className="text-flockie-blue">flock.</span>{" "}
                   <span className="block">
-                    Your next trip needs a{" "}
+                    Your next plan needs a{" "}
                     <span className="wavy decoration-flockie-orange">+1.</span>
                   </span>
                 </h1>
@@ -145,8 +145,9 @@ export default function HomePage() {
                 How it works
               </h2>
               <p className="mt-4 text-lg font-medium text-white/90">
-                Match on vibe, then plan a whole trip together — or just meet up
-                tonight. The whole loop lives in one app, start to finish.
+                Match on vibe, then make a plan together, whether that's a trip
+                across the world or dinner across town. The whole loop lives in
+                one app, start to finish.
               </p>
             </Reveal>
 
@@ -299,7 +300,7 @@ export default function HomePage() {
                     ))}
                   </div>
                   <p className="mt-4 text-xs font-semibold text-muted">
-                    Positive-only tags — every review sharpens your next match.
+                    Positive-only tags, so every review sharpens your next match.
                   </p>
                 </div>
               </Reveal>
@@ -307,14 +308,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* -------------------------------------------------- BUDDY BOUNTY */}
+        {/* -------------------------------------------------- VIBE BUDDY */}
         {/* cream block between the orange proof section and black waitlist */}
-        <section id="buddy-bounty" className="relative overflow-hidden bg-[#FBF8F3]">
+        <section id="vibe-buddy" className="relative overflow-hidden bg-[#FBF8F3]">
           <Bird className="drift absolute right-[8%] top-16 hidden h-9 w-9 lg:block" />
           <div className="mx-auto max-w-6xl px-6 py-24">
             <Reveal className="max-w-2xl">
               <span className="inline-flex items-center rounded-full border-2 border-ink bg-[#FFD166] px-4 py-1.5 text-sm font-extrabold text-ink">
-                {BOUNTY.eyebrow}
+                {VIBE_BUDDY.eyebrow}
               </span>
               <h2 className="mt-5 font-black leading-[0.98] tracking-[-0.02em] [font-size:clamp(2rem,5vw,4rem)]">
                 Not just trips. Find someone to do{" "}
@@ -322,12 +323,12 @@ export default function HomePage() {
                 with.
               </h2>
               <p className="mt-4 text-lg font-medium text-ink/70">
-                {BOUNTY.subhead}
+                {VIBE_BUDDY.subhead}
               </p>
             </Reveal>
 
             <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {BOUNTY.examples.map((b, i) => (
+              {VIBE_BUDDY.examples.map((b, i) => (
                 <Reveal key={b.title} delay={i * 100}>
                   <div
                     className={`flex h-full flex-col rounded-3xl border-2 border-ink bg-white p-5 shadow-[0_6px_0_0_rgba(26,26,26,1)] transition-transform hover:-translate-y-1 ${
@@ -357,7 +358,7 @@ export default function HomePage() {
                     <span
                       className={`mt-3 inline-flex w-fit rounded-full border-2 border-ink px-3 py-1 text-xs font-extrabold ${b.accent}`}
                     >
-                      {b.perk}
+                      {b.tag}
                     </span>
 
                     <p className="mt-4 text-xs font-semibold text-muted">

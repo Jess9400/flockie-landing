@@ -7,18 +7,18 @@ export const NAV_LINKS = [
 ] as const;
 
 export const HERO = {
-  eyebrow: "Travel buddies + Buddy Bounty",
+  eyebrow: "Trips, meetups, anything",
   headlineLead: "Find your flock.",
-  headlineRest: "Your next trip needs a +1.",
+  headlineRest: "Your next plan needs a +1.",
   subhead:
-    "The matching platform for solo travelers, nomads, and anyone who hates doing things alone. Find a travel buddy for your next trip — or post a Buddy Bounty for tonight. Matched on a vibe check, so you actually click.",
+    "The platform to find compatible, vibe-checked people to do anything with you, from a trip across the world to dinner across town. Answer a few questions, swipe, and go.",
   cta: "Join the waitlist",
   trust: "287 travelers waiting · Founding members get lifetime perks",
 } as const;
 
 // Hero photos — pairs of people *doing things together*, not just places.
 // Reinforces that Flockie is for trips AND any activity you'd rather not do
-// alone (see Buddy Bounty). Unsplash placeholders, all verified.
+// alone (see Vibe Buddy). Unsplash placeholders, all verified.
 export const HERO_PHOTOS = [
   {
     src: "https://images.unsplash.com/photo-1562278996-b055b6a1190f?auto=format&fit=crop&w=900&q=80",
@@ -38,7 +38,7 @@ export const HERO_PHOTOS = [
   {
     src: "https://images.unsplash.com/photo-1634294007943-f24d8c9e7d39?auto=format&fit=crop&w=900&q=80",
     alt: "A group of friends toasting drinks together at a dinner table",
-    label: "Dinner's on me",
+    label: "Dinner",
   },
 ] as const;
 
@@ -46,22 +46,22 @@ export const STEPS = [
   {
     n: "01",
     title: "Build your vibe check",
-    body: "Answer 10 quick questions about how you travel. Then a friend fills out the same form about you — the gap between the two answers is the real signal.",
+    body: "Answer 10 quick questions about how you like to spend time. Then a friend fills out the same form about you, so the gap between the two answers becomes the real signal.",
   },
   {
     n: "02",
     title: "Swipe to match",
-    body: "The algorithm scores compatibility on travel style, pace, and social energy, then serves your top buddies. Swipe right — a mutual like opens a chat.",
+    body: "The algorithm scores compatibility on style, pace, and social energy, then serves your top people. Swipe right, and a mutual like opens a chat.",
   },
   {
     n: "03",
     title: "Plan it all in one place",
-    body: "Build a shared itinerary inside the chat and lock in the best deals on hotels, flights, and activities — without ever leaving Flockie.",
+    body: "Sort the details right inside the chat, from booking a trip together to picking the bar for tonight, without ever leaving Flockie.",
   },
   {
     n: "04",
-    title: "Travel, then review",
-    body: "After the trip, you and your buddy leave honest reviews. Those reviews feed the algorithm, so every future match gets sharper.",
+    title: "Meet up, then review",
+    body: "After you hang out or travel together, you both leave honest reviews. Those reviews feed the algorithm, so every future match gets sharper.",
   },
 ] as const;
 
@@ -77,33 +77,33 @@ export const AVATARS = {
 // Product tour — copy for each in-app screen mockup.
 export const SHOWCASE = {
   eyebrow: "A look inside the app",
-  headline: "The whole trip, one app.",
+  headline: "The whole plan, one app.",
   subhead:
-    "From the vibe check to booking the hotel — here's what you'll actually be using.",
+    "From the vibe check to making the plan, here's what you'll actually be using.",
   features: [
     {
       id: "vibe",
       title: "A vibe check you can't fake",
-      body: "Ten questions about how you really travel — then a friend answers the same ten about you. The gap between the two is the matching gold.",
+      body: "Ten questions about how you really like to spend time, then a friend answers the same ten about you. The gap between the two is the matching gold.",
       tags: ["10 questions", "Friend-vouched"],
     },
     {
       id: "swipe",
       title: "Swipe on people who actually fit",
-      body: "Every card is pre-scored by the algorithm. See your match %, shared vibe tags, and where they're headed before you swipe right.",
+      body: "Every card is pre-scored by the algorithm. See your match %, shared vibe tags, and what they're up to before you swipe right.",
       tags: ["Match %", "Vibe tags"],
     },
     {
       id: "planner",
       title: "Plan and book in one place",
-      body: "Build a day-by-day itinerary with your buddy, then lock in hotels, flights, and activities at member prices — without ever leaving Flockie.",
-      tags: ["Shared itinerary", "Best deals"],
+      body: "Plan it together in the chat, then lock in tables, tickets, hotels, and activities at member prices, without ever leaving Flockie.",
+      tags: ["Shared plans", "Best deals"],
     },
     {
       id: "flock",
       title: "Or start a Flock others can join",
-      body: "Post an open trip, set the vibe, budget, and number of spots, and let compatible travelers request in after a quick trip vibe check. A marketplace for group trips — minus the randoms.",
-      tags: ["Open trips", "Request to join"],
+      body: "Post an open plan, a trip or a night out, set the vibe and the number of spots, and let compatible people request in after a quick vibe check. A marketplace for plans, minus the randoms.",
+      tags: ["Open plans", "Request to join"],
     },
   ],
 } as const;
@@ -135,23 +135,23 @@ export const VIBE = {
   eyebrow: "Proof you can't fake",
   headline2: "Reviews of people, not just places.",
   intro:
-    "You'd never book a hotel without reading the reviews. Or a restaurant. Or a tour. So why trust a stranger with ten days of your life on a hunch? Flockie is the first place you check a travel buddy before you go — built on two signals nobody can fake.",
+    "You'd never book a hotel without reading the reviews. Or a restaurant. Or a tour. So why trust a stranger with your time on a hunch? Flockie is the first place you check a person before you make plans, built on two signals nobody can fake.",
   // The social-proof analogy: the obvious ones, then the new one.
   checklist: [
     { label: "Restaurants", checked: true },
     { label: "Hotels", checked: true },
     { label: "Activities", checked: true },
-    { label: "Your travel buddy", checked: false },
+    { label: "The actual person", checked: false },
   ],
   vibeCard: {
     title: "The vibe check",
     blurb:
-      "Nobody rates themselves as inflexible — a friend will. The gap between how you see yourself and how a friend sees you is the part you can't fake.",
+      "Nobody rates themselves as inflexible, but a friend will. The gap between how you see yourself and how a friend sees you is the part you can't fake.",
   },
   reviewsCard: {
-    title: "Honest post-trip reviews",
+    title: "Honest post-meetup reviews",
     blurb:
-      "After every trip, buddies leave reviews — positive-only tags that feed straight back into who you match with next.",
+      "After you meet up or travel, people leave reviews, positive-only tags that feed straight back into who you match with next.",
     person: "Maya, 29",
     meta: "6 trips · 5.0 ★",
     tags: [
@@ -164,38 +164,38 @@ export const VIBE = {
   },
 } as const;
 
-// Buddy Bounty — the broader positioning: find someone to do *anything* with,
-// not just travel. Post an activity (with an optional perk), people opt in.
-export const BOUNTY = {
-  eyebrow: "New · Buddy Bounty",
+// Vibe Buddy — the broader positioning: find someone to do *anything* with,
+// not just travel. Post a plan, compatible people nearby opt in.
+export const VIBE_BUDDY = {
+  eyebrow: "New · Vibe Buddy",
   headline: "Not just trips. Find someone to do anything with.",
   subhead:
-    "Don't want to do it alone? Post a Buddy Bounty — a dinner, a hike, a gig, a dive. Add a perk if you like. Compatible people nearby opt in.",
+    "Don't want to do it alone? Post a Vibe Buddy plan, a dinner, a hike, a gig, a weekend away, and compatible people nearby (or heading the same way) opt in.",
   examples: [
     {
       avatar: "maya",
       emoji: "🍝",
       host: "Maya",
       title: "Dinner at Casa Lola, tonight",
-      perk: "Dinner's on me",
+      tag: "Foodies welcome",
       meta: "8pm · Lisbon · 4 in",
       accent: "bg-flockie-orange text-white",
     },
     {
       avatar: "leo",
-      emoji: "🪂",
+      emoji: "🎸",
       host: "Léo",
-      title: "Sunrise skydive on Saturday",
-      perk: "Split the gas",
-      meta: "Sat 6am · 2 spots left",
+      title: "Live music at the docks, Friday",
+      tag: "Chill night",
+      meta: "Fri 9pm · 3 in",
       accent: "bg-flockie-blue text-white",
     },
     {
       avatar: "amelia",
       emoji: "🏄",
       host: "Amelia",
-      title: "Beginner surf lesson",
-      perk: "I'll bring the boards",
+      title: "Beginner surf lesson, Sunday",
+      tag: "Beginners welcome",
       meta: "Sun · Ericeira · 3 in",
       accent: "bg-[#FFD166] text-ink",
     },
@@ -203,7 +203,7 @@ export const BOUNTY = {
 } as const;
 
 export const WAITLIST = {
-  kicker: "Travel with people who actually match your vibe.",
+  kicker: "Find people who actually match your vibe.",
   headline: "Be one of the first 500 on the inside.",
   subhead: "Founding members get lifetime perks and early matching.",
   placeholder: "you@email.com",
