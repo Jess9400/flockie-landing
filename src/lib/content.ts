@@ -212,10 +212,10 @@ export const WAITLIST = {
 } as const;
 
 export const SOCIALS = [
-  { label: "Instagram", href: "https://instagram.com/findflockie", icon: "instagram" },
+  { label: "Instagram", href: "https://instagram.com/find.flockie", icon: "instagram" },
   { label: "TikTok", href: "https://tiktok.com/@findflockie", icon: "tiktok" },
   { label: "X / Twitter", href: "https://x.com/findflockie", icon: "x" },
-  { label: "LinkedIn", href: "https://linkedin.com/company/findflockie", icon: "linkedin" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/findflockie/", icon: "linkedin" },
 ] as const;
 
 export const FOOTER = {
