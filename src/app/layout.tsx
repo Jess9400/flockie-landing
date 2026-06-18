@@ -13,6 +13,13 @@ const TRAVELPAYOUTS_DRIVE = `(function () {
   document.head.appendChild(script);
 })();`;
 
+// Google Analytics 4
+const GA_MEASUREMENT_ID = "G-ZE6F3L3X6P";
+const GA_INIT = `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');`;
+
 // Style A display accent — Instrument Serif italic
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -52,6 +59,12 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${instrumentSerif.variable} ${dmSans.variable}`}
     >
       <head>
+        {/* Google Analytics 4 */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        />
+        <script dangerouslySetInnerHTML={{ __html: GA_INIT }} />
         {/* Travelpayouts "Drive" tag (marker 540997) */}
         <script dangerouslySetInnerHTML={{ __html: TRAVELPAYOUTS_DRIVE }} />
       </head>
