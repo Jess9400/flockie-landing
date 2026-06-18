@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { SOCIALS, FOOTER } from "@/lib/content";
 import { SOCIAL_ICONS } from "./icons";
 
@@ -74,13 +75,21 @@ export default function Footer({ variant }: FooterProps) {
             : "border-t border-gray-100"
         }
       >
-        <p
-          className={`mx-auto max-w-6xl px-6 py-6 text-sm ${
+        <div
+          className={`mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 text-sm sm:flex-row sm:items-center sm:justify-between ${
             bold ? "text-white/60" : "text-muted"
           }`}
         >
-          {FOOTER.legal}
-        </p>
+          <p>{FOOTER.legal}</p>
+          <Link
+            href="/privacy"
+            className={
+              bold ? "hover:text-white transition-colors" : "hover:text-ink transition-colors"
+            }
+          >
+            Privacy Policy
+          </Link>
+        </div>
       </div>
     </footer>
   );

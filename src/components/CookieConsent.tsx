@@ -72,7 +72,13 @@ export default function CookieConsent() {
     >
       <p className="font-dm text-sm font-medium text-ink/80">
         We use cookies to understand how visitors use Flockie — analytics only.
-        Your call.
+        Your call.{" "}
+        <a
+          href="/privacy"
+          className="font-bold text-flockie-orange underline underline-offset-2"
+        >
+          Privacy Policy
+        </a>
       </p>
       <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:justify-end">
         <button
