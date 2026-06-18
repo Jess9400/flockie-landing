@@ -18,36 +18,39 @@ export default function Nav({ variant }: NavProps) {
     ? "bg-white border-2 border-ink rounded-full shadow-[0_4px_0_0_rgba(26,26,26,1)]"
     : "bg-white/80 backdrop-blur-md border border-gray-100 rounded-full shadow-sm";
 
-  // Link styling
   const linkClass = bold
     ? "font-dm font-bold text-ink hover:text-flockie-orange transition-colors"
     : "font-sans text-muted hover:text-ink transition-colors";
 
-  // Secondary button (Join waitlist)
+  // Buttons share compact sizing on mobile, larger from sm up. whitespace-nowrap
+  // keeps "Launch App" on one line so the row stays aligned.
   const secondary = bold
-    ? "font-dm font-bold rounded-full px-4 py-2 bg-white text-ink border-2 border-ink pushable hover:scale-105 transition-transform"
-    : "font-sans text-sm rounded-full px-4 py-2 border border-gray-200 text-ink hover:bg-gray-50 transition-colors";
+    ? "font-dm font-bold whitespace-nowrap rounded-full border-2 border-ink bg-white text-ink pushable transition-transform hover:scale-105 text-xs px-3 py-2 sm:text-base sm:px-4"
+    : "font-sans whitespace-nowrap rounded-full border border-gray-200 text-ink hover:bg-gray-50 transition-colors text-xs px-3 py-2 sm:text-sm sm:px-4";
 
-  // Primary button (Launch App)
   const primary = bold
-    ? "font-dm font-bold rounded-full px-5 py-2 bg-flockie-orange text-white border-2 border-ink shadow-[0_4px_0_0_#E0512C] pushable hover:scale-105 transition-transform"
-    : "font-sans text-sm rounded-full px-5 py-2 bg-flockie-orange text-white hover:brightness-105 transition";
+    ? "font-dm font-bold whitespace-nowrap rounded-full bg-flockie-orange text-white border-2 border-ink shadow-[0_4px_0_0_#E0512C] pushable transition-transform hover:scale-105 text-xs px-3 py-2 sm:text-base sm:px-5"
+    : "font-sans whitespace-nowrap rounded-full bg-flockie-orange text-white hover:brightness-105 transition text-xs px-3 py-2 sm:text-sm sm:px-5";
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 px-4 pt-4 sm:px-6">
+    <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-6 sm:pt-4">
       <nav
-        className={`mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-5 ${pill}`}
+        className={`mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-2 sm:px-5 sm:py-2.5 ${pill}`}
         aria-label="Primary"
       >
         {/* Logo lockup */}
-        <Link href="/" className="flex shrink-0 items-center" aria-label="Flockie home">
+        <Link
+          href="/"
+          className="flex shrink-0 items-center"
+          aria-label="Flockie home"
+        >
           <Image
             src="/logo.svg"
             alt="Flockie"
             width={140}
             height={47}
             priority
-            className="h-8 w-auto sm:h-9"
+            className="h-7 w-auto sm:h-9"
           />
         </Link>
 
@@ -63,11 +66,11 @@ export default function Nav({ variant }: NavProps) {
         </ul>
 
         {/* Right cluster — both buttons always visible */}
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           <a href="#waitlist" className={`${secondary} hidden sm:inline-flex`}>
             Join waitlist
           </a>
-          <a href="#waitlist" className={`${secondary} text-xs sm:hidden`}>
+          <a href="#waitlist" className={`${secondary} sm:hidden`}>
             Waitlist
           </a>
           <a href="#" className={primary}>
@@ -81,7 +84,7 @@ export default function Nav({ variant }: NavProps) {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
-            className={`ml-1 inline-flex h-9 w-9 items-center justify-center md:hidden ${
+            className={`inline-flex h-8 w-8 shrink-0 items-center justify-center md:hidden ${
               bold
                 ? "rounded-full border-2 border-ink"
                 : "rounded-full border border-gray-200"
