@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { GeistSans } from "geist/font/sans";
 import { Instrument_Serif, DM_Sans } from "next/font/google";
 import "./globals.css";
@@ -41,6 +42,13 @@ export default function RootLayout({
       lang="en"
       className={`${GeistSans.variable} ${instrumentSerif.variable} ${dmSans.variable}`}
     >
+      {/* Travelpayouts "Drive" verification + tools tag (marker 540997) */}
+      <Script
+        id="travelpayouts-drive"
+        src="https://emrldtp.com/NTQwOTk3.js?t=540997"
+        strategy="beforeInteractive"
+        async
+      />
       <body>{children}</body>
     </html>
   );
