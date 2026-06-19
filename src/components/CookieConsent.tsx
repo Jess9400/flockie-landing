@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const GA_ID = "G-ZE6F3L3X6P";
+const GA_ID = "G-9MLMK46QPM";
 const STORAGE_KEY = "flockie-cookie-consent";
 
 // Inject + initialise Google Analytics. Only ever called after consent.
